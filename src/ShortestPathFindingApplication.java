@@ -2,6 +2,7 @@ import searchAlgorithms.blindSearch.BreadthFirstSearch;
 import searchAlgorithms.blindSearch.DepthFirstSearch;
 import searchAlgorithms.blindSearch.DepthLimited;
 import searchAlgorithms.blindSearch.IterativeDeepening;
+import searchAlgorithms.heuristicSearch.HillClimbing;
 import utils.FileUtils;
 import utils.Matrix;
 
@@ -24,5 +25,7 @@ public class ShortestPathFindingApplication {
 		DepthFirstSearch.runSearch(m);
 		DepthLimited.runSearch(m);
 		IterativeDeepening.runSearch(m);
+
+		HillClimbing.runSearch(m);
 	}
 }
