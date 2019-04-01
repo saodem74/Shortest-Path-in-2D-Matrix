@@ -89,4 +89,8 @@ public class Matrix {
 			System.out.println();
 		}
 	}
+
+	public int getHeuristicFrom(int i, int j) {
+		return Math.abs(getiDes() - i) + Math.abs(getjDes() - j);
+	}
 }
