@@ -11,7 +11,7 @@ import utils.utils;
  */
 public class DepthLimited {
 
-	static private void DFS(Matrix data, int[][] mark, int currX, int currY, int limited) {
+	static private void DL(Matrix data, int[][] mark, int currX, int currY, int limited) {
 		if (data.isDestination(currX, currY)) {
 			return;
 		}
@@ -32,7 +32,7 @@ public class DepthLimited {
 			if (mark[newX][newY] != 0) continue;
 
 			mark[newX][newY] = mark[currX][currY] + 1;
-			DFS(data, mark, newX, newY, limited);
+			DL(data, mark, newX, newY, limited);
 			mark[newX][newY] = 0;
 		}
 	}
@@ -46,7 +46,7 @@ public class DepthLimited {
 		int limited = Math.max(data.getN(), data.getM());
 		System.out.println("Depth Limit = " + Integer.toString(limited));
 
-		DFS(data, mark, data.getiSource(), data.getjSource(), limited);
+		DL(data, mark, data.getiSource(), data.getjSource(), limited);
 
 		if (mark[data.getiDes()][data.getjDes()] == 0) {
 			System.out.println("Can not find path to the destination!!!");
