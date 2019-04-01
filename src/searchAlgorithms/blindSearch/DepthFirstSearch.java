@@ -1,11 +1,8 @@
 package searchAlgorithms.blindSearch;
 
-import utils.Cell;
 import utils.Matrix;
 import utils.utils;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author Harry Tran on 3/30/19.
