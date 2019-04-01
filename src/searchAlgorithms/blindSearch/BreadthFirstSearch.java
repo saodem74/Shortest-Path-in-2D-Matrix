@@ -16,7 +16,7 @@ import java.util.Queue;
 public class BreadthFirstSearch {
 
 	public static void runSearch(Matrix data) {
-		System.out.println("=== Breadth First Search ===");
+		System.out.println("\n=== Breadth First Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

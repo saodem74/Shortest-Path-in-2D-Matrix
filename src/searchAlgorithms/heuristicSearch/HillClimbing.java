@@ -54,7 +54,7 @@ public class HillClimbing {
 	}
 
 	static public void runSearch(Matrix data) {
-		System.out.println("=== Hill Climbing Search ===");
+		System.out.println("\n=== Hill Climbing Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

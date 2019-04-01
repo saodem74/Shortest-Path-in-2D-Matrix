@@ -17,7 +17,7 @@ import java.util.Queue;
  */
 public class BestFirstSearch {
 	public static void runSearch(Matrix data) {
-		System.out.println("=== Best First Search ===");
+		System.out.println("\n=== Best First Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

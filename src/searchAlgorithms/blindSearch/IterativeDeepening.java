@@ -37,7 +37,7 @@ public class IterativeDeepening {
 	}
 
 	static public void runSearch(Matrix data) {
-		System.out.println("=== Iterative Deepening Search ===");
+		System.out.println("\n=== Iterative Deepening Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

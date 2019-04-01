@@ -68,6 +68,11 @@ public class Matrix {
 		return true;
 	}
 
+	public Cell getCell(int i, int j, int cost) {
+		Cell c = new Cell(i, j, data[i][j], getHeuristicFrom(i, j) + cost);
+		return c;
+	}
+
 	public Cell getCell(int i, int j) {
 		Cell c = new Cell(i, j, data[i][j], getHeuristicFrom(i, j));
 		return c;

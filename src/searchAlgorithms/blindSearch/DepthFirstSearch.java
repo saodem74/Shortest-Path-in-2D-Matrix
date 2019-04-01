@@ -38,7 +38,7 @@ public class DepthFirstSearch {
 	}
 
 	static public void runSearch(Matrix data) {
-		System.out.println("=== Depth First Search ===");
+		System.out.println("\n=== Depth First Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

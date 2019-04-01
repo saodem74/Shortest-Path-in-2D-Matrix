@@ -38,7 +38,7 @@ public class DepthLimited {
 	}
 
 	static public void runSearch(Matrix data) {
-		System.out.println("=== Depth Limited Search ===");
+		System.out.println("\n=== Depth Limited Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 

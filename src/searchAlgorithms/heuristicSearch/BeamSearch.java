@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class BeamSearch {
 	public static void runSearch(Matrix data) {
-		System.out.println("=== Beam Search ===");
+		System.out.println("\n=== Beam Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
 
