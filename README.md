@@ -3,7 +3,7 @@ This project aims to solve the problem of finding shortest path in 2D Matrix usi
 
 
 ## Problem: 
-Given a matrix of N*M order (N row, M column). Find the shortest distance from a source cell to a destination cell, traversing through limited cells only. This problem is meant for single source and destination. You can move only up, down, left and right. In the matrix, each cell is represented by a character, which is:
+Given a matrix of N*M order (N row, M column). Find the shortest distance from a source cell to a destination cell, traversing through limited cells only. This problem is meant for single source and destination. You can move only **up, down, left and right.** In the matrix, each cell is represented by a character, which is:
 
 *  **S** represents ‘source’
 
@@ -60,5 +60,5 @@ In this project, I am going to solve this problem with:
   * Best-first search 
   * A* search. 
   
-All the algorithm will has been run on the same input and the same computer. The comparison would be provided and the evaluation is based on: Complete, Time, Space, and Optimal.
+All the algorithm will has been run on the same input and the same computer. The comparison would be provided and the evaluation is based on: *Complete, Time, Space, and Optimal.*
 
