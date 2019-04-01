@@ -1,4 +1,5 @@
 import searchAlgorithms.blindSearch.BreadthFirstSearch;
+import searchAlgorithms.blindSearch.DepthFirstSearch;
 import utils.FileUtils;
 import utils.Matrix;
 
@@ -18,5 +19,6 @@ public class ShortestPathFindingApplication {
 		m.printOutMaxtix();
 
 		BreadthFirstSearch.runSearch(m);
+		DepthFirstSearch.runSearch(m);
 	}
 }
