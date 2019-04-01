@@ -69,7 +69,7 @@ public class Matrix {
 	}
 
 	public Cell getCell(int i, int j) {
-		Cell c = new Cell(i, j, data[i][j]);
+		Cell c = new Cell(i, j, data[i][j], getHeuristicFrom(i, j));
 		return c;
 	}
 

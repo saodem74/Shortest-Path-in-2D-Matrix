@@ -9,11 +9,13 @@ package utils;
 public class Cell {
 	public int x;
 	public int y;
-	char val;
+	public char val;
+	public int h_value;
 
-	public Cell(int i, int j, char val) {
+	public Cell(int i, int j, char val, int h_v) {
 		this.x = i;
 		this.y = j;
 		this.val = val;
+		this.h_value = h_v;
 	}
 }
