@@ -20,6 +20,7 @@ public class BestFirstSearch {
 		System.out.println("\n=== Best First Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
+		Cell[][] par = new Cell[data.getN()][data.getM()];
 
 		mark[data.getiSource()][data.getjSource()] = 1;
 		Queue<Cell> q = new PriorityQueue<>(new Comparator<Cell>() {
@@ -30,6 +31,7 @@ public class BestFirstSearch {
 		});
 
 		q.offer(data.getCell(data.getiSource(), data.getjSource()));
+		par[data.getiSource()][data.getjSource()] = null;
 
 		while (!q.isEmpty()) {
 				Cell curr = q.poll();
@@ -41,6 +43,7 @@ public class BestFirstSearch {
 
 					mark[newX][newY] = mark[curr.x][curr.y] + 1;
 					q.offer(data.getCell(newX, newY));
+					par[newX][newY] = curr;
 
 					if (data.isDestination(newX, newY)) break;
 				}
@@ -50,6 +53,7 @@ public class BestFirstSearch {
 			System.out.println("Can not find path to the destination!!!");
 		} else {
 			System.out.println("Distance = " + Integer.toString(mark[data.getiDes()][data.getjDes()] - 1));
+			utils.tracking(data, par);
 		}
 		long endTime = System.nanoTime();
 		System.out.println(Double.toString((double) (endTime - startTime) / 1000000) + " miliseconds");
