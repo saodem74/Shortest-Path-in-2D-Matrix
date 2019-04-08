@@ -26,8 +26,8 @@ public class DepthFirstSearch {
 
 			if (data.isDestination(newX, newY)){
 				if (mark[newX][newY] == 0 || mark[currX][currY] + 1 < mark[newX][newY]) {
-					par[newX][newY] = data.getCell(currX, currY);
 					mark[newX][newY] = mark[currX][currY] + 1;
+					par[newX][newY] = data.getCell(currX, currY);
 					utils.copyData(par, parCache);
 				}
 				continue;

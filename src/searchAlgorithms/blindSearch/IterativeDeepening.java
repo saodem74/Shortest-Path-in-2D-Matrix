@@ -2,6 +2,7 @@ package searchAlgorithms.blindSearch;
 
 import utils.Matrix;
 import utils.utils;
+import utils.Cell;
 
 /**
  * @author Harry Tran on 3/30/19.
@@ -10,7 +11,7 @@ import utils.utils;
  * @organization UTDallas
  */
 public class IterativeDeepening {
-	static private void ID(Matrix data, int[][] mark, int currX, int currY, int limited) {
+	static private void ID(Matrix data, int[][] mark, int currX, int currY, int limited, Cell[][] par, Cell[][] parCache) {
 		if (data.isDestination(currX, currY)) {
 			return;
 		}
@@ -24,6 +25,8 @@ public class IterativeDeepening {
 			if (data.isDestination(newX, newY)){
 				if (mark[newX][newY] == 0 || mark[currX][currY] + 1 < mark[newX][newY]) {
 					mark[newX][newY] = mark[currX][currY] + 1;
+					par[newX][newY] = data.getCell(currX, currY);
+					utils.copyData(par, parCache);
 				}
 				continue;
 			}
@@ -31,7 +34,9 @@ public class IterativeDeepening {
 			if (mark[newX][newY] != 0) continue;
 
 			mark[newX][newY] = mark[currX][currY] + 1;
-			ID(data, mark, newX, newY, limited);
+			par[newX][newY] = data.getCell(currX, currY);
+			ID(data, mark, newX, newY, limited, par, parCache);
+			par[newX][newY] = null;
 			mark[newX][newY] = 0;
 		}
 	}
@@ -45,10 +50,14 @@ public class IterativeDeepening {
 
 		System.out.print("Depth Limit = ");
 		for (int limited = 1; limited <= data.getN() * data.getM(); ++limited) {
+			Cell[][] par = new Cell[data.getN()][data.getM()];
+			Cell[][] parCache = new Cell[data.getN()][data.getM()];
+
 			System.out.print(", " + Integer.toString(limited - 1));
-			ID(data, mark, data.getiSource(), data.getjSource(), limited);
+			ID(data, mark, data.getiSource(), data.getjSource(), limited, par, parCache);
 			if (mark[data.getiDes()][data.getjDes()] != 0) {
 				System.out.println("\nDistance = " + Integer.toString(mark[data.getiDes()][data.getjDes()] - 1));
+				utils.tracking(data, parCache);
 				break;
 			}
 		}
