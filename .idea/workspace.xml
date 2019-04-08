@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98addf90-cab6-4383-8520-7792a8cc2d74" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/BestFirstSearch.java" afterPath="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/BestFirstSearch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java" afterPath="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,16 +38,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="input1.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/input/input1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="input2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/input/input2.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,7 +51,7 @@
       <file leaf-file-name="DepthFirstSearch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/blindSearch/DepthFirstSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="272">
               <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HillClimbing.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HillClimbing.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+            <state relative-caret-position="246">
+              <caret line="74" column="43" lean-forward="false" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BestFirstSearch.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BestFirstSearch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/BestFirstSearch.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
@@ -162,7 +152,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/utils/FileUtils.java" />
-        <option value="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java" />
         <option value="$PROJECT_DIR$/src/input/input1.txt" />
         <option value="$PROJECT_DIR$/src/utils/Cell.java" />
         <option value="$PROJECT_DIR$/src/utils/Matrix.java" />
@@ -176,6 +165,7 @@
         <option value="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/AStar.java" />
         <option value="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/BeamSearch.java" />
         <option value="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/BestFirstSearch.java" />
+        <option value="$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java" />
       </list>
     </option>
   </component>
@@ -771,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/blindSearch/DepthLimited.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -827,30 +807,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/blindSearch/DepthFirstSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/blindSearch/BreadthFirstSearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -897,6 +857,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="55" column="38" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/blindSearch/DepthFirstSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchAlgorithms/heuristicSearch/HillClimbing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="74" column="43" lean-forward="false" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

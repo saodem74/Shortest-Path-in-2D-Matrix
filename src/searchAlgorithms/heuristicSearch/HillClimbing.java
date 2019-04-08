@@ -3,6 +3,7 @@ package searchAlgorithms.heuristicSearch;
 import javafx.util.Pair;
 import utils.Matrix;
 import utils.utils;
+import utils.Cell;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +16,7 @@ import java.util.Comparator;
  * @organization UTDallas
  */
 public class HillClimbing {
-	static private void DFS(Matrix data, int[][] mark, int currX, int currY) {
+	static private void DFS(Matrix data, int[][] mark, int currX, int currY, Cell[][] par, Cell[][] parCache) {
 		if (data.isDestination(currX, currY)) {
 			return;
 		}
@@ -41,6 +42,8 @@ public class HillClimbing {
 			if (data.isDestination(newX, newY)){
 				if (mark[newX][newY] == 0 || mark[currX][currY] + 1 < mark[newX][newY]) {
 					mark[newX][newY] = mark[currX][currY] + 1;
+					par[newX][newY] = data.getCell(currX, currY);
+					utils.copyData(par, parCache);
 				}
 				continue;
 			}
@@ -48,8 +51,10 @@ public class HillClimbing {
 			if (mark[newX][newY] != 0) continue;
 
 			mark[newX][newY] = mark[currX][currY] + 1;
-			DFS(data, mark, newX, newY);
+			par[newX][newY] = data.getCell(currX, currY);
+			DFS(data, mark, newX, newY, par, parCache);
 			mark[newX][newY] = 0;
+			par[newX][newY] = null;
 		}
 	}
 
@@ -57,14 +62,17 @@ public class HillClimbing {
 		System.out.println("\n=== Hill Climbing Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
+		Cell[][] par = new Cell[data.getN()][data.getM()];
+		Cell[][] parCache = new Cell[data.getN()][data.getM()];
 
 		mark[data.getiSource()][data.getjSource()] = 1;
-		DFS(data, mark, data.getiSource(), data.getjSource());
+		DFS(data, mark, data.getiSource(), data.getjSource(), par, parCache);
 
 		if (mark[data.getiDes()][data.getjDes()] == 0) {
 			System.out.println("Can not find path to the destination!!!");
 		} else {
 			System.out.println("Distance = " + Integer.toString(mark[data.getiDes()][data.getjDes()] - 1));
+			utils.tracking(data, parCache);
 		}
 		long endTime   = System.nanoTime();
 		System.out.println(Double.toString((double)(endTime - startTime)/1000000) + " miliseconds");
