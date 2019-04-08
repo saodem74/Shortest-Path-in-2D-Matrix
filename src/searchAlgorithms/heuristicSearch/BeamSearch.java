@@ -17,6 +17,7 @@ public class BeamSearch {
 		System.out.println("\n=== Beam Search ===");
 		long startTime = System.nanoTime();
 		int[][] mark = new int[data.getN()][data.getM()];
+		Cell[][] par = new Cell[data.getN()][data.getM()];
 
 		int BEAM_SIZE = Math.max(data.getM(), data.getN());
 
@@ -24,6 +25,7 @@ public class BeamSearch {
 		Queue<Cell> q = new LinkedList<>();
 
 		q.offer(data.getCell(data.getiSource(), data.getjSource()));
+		par[data.getiSource()][data.getjSource()] = null;
 
 		while (!q.isEmpty()) {
 			Queue<Cell> q2 = new PriorityQueue<>(new Comparator<Cell>() {
@@ -42,13 +44,15 @@ public class BeamSearch {
 					if (mark[newX][newY] != 0) continue;
 
 					mark[newX][newY] = mark[curr.x][curr.y] + 1;
+					par[newX][newY] = curr;
 					q2.offer(data.getCell(newX, newY));
 
 					if (data.isDestination(newX, newY)) break;
 				}
 			}
 
-			for (int i = 0; i < Math.min(q2.size(), BEAM_SIZE); ++i) {
+			for (int i = 0; i < BEAM_SIZE; ++i) {
+				if (q2.isEmpty()) break;
 				q.offer(q2.poll());
 			}
 		}
@@ -57,6 +61,7 @@ public class BeamSearch {
 			System.out.println("Can not find path to the destination!!!");
 		} else {
 			System.out.println("Distance = " + Integer.toString(mark[data.getiDes()][data.getjDes()] - 1));
+			utils.tracking(data, par);
 		}
 		long endTime = System.nanoTime();
 		System.out.println(Double.toString((double) (endTime - startTime) / 1000000) + " miliseconds");
