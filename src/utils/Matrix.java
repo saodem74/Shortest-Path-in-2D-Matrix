@@ -78,6 +78,9 @@ public class Matrix {
 		return c;
 	}
 
+	public Cell getDestinationCell() {
+		return getCell(iDes, jDes);
+	}
 	public boolean isDestination(int i, int j) {
 		return isInside(i, j) && data[i][j] == 'D';
 	}

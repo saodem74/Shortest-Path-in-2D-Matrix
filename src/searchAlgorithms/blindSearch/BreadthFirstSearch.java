@@ -22,7 +22,10 @@ public class BreadthFirstSearch {
 
 		mark[data.getiSource()][data.getjSource()] = 1;
 		Queue<Cell> q = new LinkedList<>();
+		Cell[][] par = new Cell[data.getN()][data.getM()];
+
 		q.offer(data.getCell(data.getiSource(), data.getjSource()));
+		par[data.getiSource()][data.getjSource()] = null;
 
 		while (!q.isEmpty()) {
 			Cell curr = q.poll();
@@ -33,6 +36,7 @@ public class BreadthFirstSearch {
 				if (mark[newX][newY] != 0) continue;
 
 				mark[newX][newY] = mark[curr.x][curr.y] + 1;
+				par[newX][newY] = curr;
 				q.offer(data.getCell(newX, newY));
 
 				if (data.isDestination(newX, newY)) break;
@@ -43,6 +47,7 @@ public class BreadthFirstSearch {
 			System.out.println("Can not find path to the destination!!!");
 		} else {
 			System.out.println("Distance = " + Integer.toString(mark[data.getiDes()][data.getjDes()] - 1));
+			utils.tracking(data, par);
 		}
 		long endTime   = System.nanoTime();
 		System.out.println(Double.toString((double)(endTime - startTime)/1000000) + " miliseconds");
