@@ -19,7 +19,7 @@ public class BeamSearch {
 		int[][] mark = new int[data.getN()][data.getM()];
 		Cell[][] par = new Cell[data.getN()][data.getM()];
 
-		int BEAM_SIZE = Math.max(data.getM(), data.getN());
+		int BEAM_SIZE = Math.max(data.getM(), data.getN()) ;
 
 		mark[data.getiSource()][data.getjSource()] = 1;
 		Queue<Cell> q = new LinkedList<>();
