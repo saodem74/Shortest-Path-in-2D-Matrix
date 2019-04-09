@@ -17,7 +17,7 @@ import utils.Matrix;
  */
 public class ShortestPathFindingApplication {
 
-	private static final String input1 = "./src/input/input3.txt";
+	private static final String input1 = "./src/input/input1.txt";
 
 	public static void main(String[] args) {
 		Matrix m = FileUtils.read2DMatrixFromFile(input1);
